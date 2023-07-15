@@ -1,0 +1,40 @@
+{
+    "remote_host": "127.0.0.1",
+    "remote_port": "9000",
+    "proxy_host": "127.0.0.1",
+    "proxy_port": "9001",
+    "rules":
+    {
+        "client":
+        [
+            {
+                "name": "Adore is better than like",
+                "type": "regex2string",
+                "case_sensitive": "false",
+                "from": "like",
+                "to": "adore",
+                "alert": ""
+            }
+        ],
+
+        "server":
+        [
+            {
+                "name": "Adore is better than like",
+                "type": "regex2string",
+                "case_sensitive": "false",
+                "from": "like",
+                "to": "adore",
+                "alert": ""
+            }, 
+            {
+                "name": "I dont like flags",
+                "type": "regex2string",
+                "case_sensitive": "true",
+                "from": "FLAG{[^}]+}",
+                "to": "not_today_crocodile",
+                "alert": "FLAG OUT+"
+            }
+        ]
+    }
+}
